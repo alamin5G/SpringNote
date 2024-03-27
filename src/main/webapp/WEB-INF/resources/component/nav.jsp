@@ -12,17 +12,16 @@
           <a class="nav-link active" aria-current="page" href="hompage">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="user-login">Login</a>
+          <a class="nav-link active" href="user-login">Add Notes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="user-registration">Register</a>
+          <a class="nav-link active" href="user-registration">View Notes</a>
         </li>
         
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-warning" type="submit">Search</button>
-      </form>
+        <a href="user-registration" class="btn m-2 btn-outline-success">Register</a>
+    
+        <a href="user-login" class="btn m-2 btn-outline-warning">Login</a>
     </div>
   </div>
 </nav>

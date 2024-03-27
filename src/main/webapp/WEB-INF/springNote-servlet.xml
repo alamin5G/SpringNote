@@ -21,4 +21,7 @@ xmlns="http://www.springframework.org/schema/beans"
 		<property name="suffix"  value=".jsp"/>
 	</bean>
 	
+	<mvc:annotation-driven/>
+	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
+	
 </beans>
