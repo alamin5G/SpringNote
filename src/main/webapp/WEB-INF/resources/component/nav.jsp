@@ -12,16 +12,16 @@
           <a class="nav-link active" aria-current="page" href="hompage">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="user-login">Add Notes</a>
+          <a class="nav-link active" href="addNote">Add Note</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="user-registration">View Notes</a>
+          <a class="nav-link active" href="viewNotes">View Notes</a>
         </li>
         
       </ul>
         <a href="user-registration" class="btn m-2 btn-outline-success">Register</a>
     
-        <a href="user-login" class="btn m-2 btn-outline-warning">Login</a>
+        <a href="user-login" class="btn m-2 btn-outline-danger">Login</a>
     </div>
   </div>
 </nav>

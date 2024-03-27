@@ -24,4 +24,16 @@ public class AppController {
 		
 		return "register";
 	}
+	
+	@RequestMapping("/addNote")
+	public String addNote() {
+		
+		return "add-note";
+	}
+	
+	@RequestMapping("/viewNotes")
+	public String viewNotes() {
+		
+		return "view-notes";
+	}
 }
