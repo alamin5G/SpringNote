@@ -26,8 +26,8 @@
 						<p>Publish Date: 2020-07-21</p>
 
 						<div class="text-center">
-							<a href="editNotes" class="btn btn-primary btn-sm">Edit</a> 
-							<a href="deleteNotes" class="btn btn-danger btn-sm">Delete</a>
+							<a href="editNote" class="btn btn-primary btn-sm">Edit</a> 
+							<a href="deleteNote" class="btn btn-danger btn-sm">Delete</a>
 						</div>
 					</div>
 
@@ -53,8 +53,8 @@
 						<p>Publish Date: 2020-07-21</p>
 
 						<div class="text-center">
-							<a href="editNotes" class="btn btn-primary btn-sm">Edit</a> 
-							<a href="deleteNotes" class="btn btn-danger btn-sm">Delete</a>
+							<a href="editNote" class="btn btn-primary btn-sm">Edit</a> 
+							<a href="deleteNote" class="btn btn-danger btn-sm">Delete</a>
 						</div>
 					</div>
 

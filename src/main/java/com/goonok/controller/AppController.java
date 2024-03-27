@@ -36,4 +36,16 @@ public class AppController {
 		
 		return "view-notes";
 	}
+	
+	@RequestMapping("editNote")
+	public String editNote() {
+		
+		return "edit-note";
+	}
+	
+	@RequestMapping("deleteNote")
+	public String deleteNote() {
+		
+		return "redirect:/viewNotes";
+	}
 }
