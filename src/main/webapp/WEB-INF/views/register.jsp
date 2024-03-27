@@ -5,8 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Your Spring Note</title>
+<%@ include file="/WEB-INF/resources/component/links_file.jsp" %>
 </head>
 <body>
-<h1>Spring Note Registration Page</h1>
+<%@ include file="/WEB-INF/resources/component/nav.jsp" %>
 </body>
 </html>
