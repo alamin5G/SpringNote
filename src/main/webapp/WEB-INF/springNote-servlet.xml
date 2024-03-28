@@ -14,7 +14,7 @@ xmlns="http://www.springframework.org/schema/beans"
     http://www.springframework.org/schema/tx 
     http://www.springframework.org/schema/tx/spring-tx.xsd">
     
-    <context:component-scan base-package="com.goonok.controller"/>
+    <context:component-scan base-package="com.goonok"/>
 
 	<bean name="viewResolver"  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"/>
@@ -23,5 +23,45 @@ xmlns="http://www.springframework.org/schema/beans"
 	
 	<mvc:annotation-driven/>
 	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
+	
+	<tx:annotation-driven/>
+	
+	<bean name="driverManager" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/springmvc" />
+		<property name="username" value="root" />
+		<property name="password" value="252646"/>
+	</bean>
+	
+	<bean name="sessionFactory"  class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="driverManager"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.goonok.entity.User</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean name="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean name="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+	
+	</bean>
+	
 	
 </beans>

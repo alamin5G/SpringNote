@@ -1,3 +1,5 @@
+<%@ include file="/WEB-INF/resources/component/jstl.jsp" %>
+
 <nav class="navbar navbar-expand-md bg-light border-bottom border-body bg-body-tertiary " data-bs-theme="dark">
   <div class="container-fluid" >
   	<i class="fa fa-book" aria-hidden="true"> <a class="navbar-brand" href="hompage"> Spring Note</a></i>
@@ -19,9 +21,18 @@
         </li>
         
       </ul>
+      
+      <c:if test="${empty isLoginSuccess }">
         <a href="user-registration" class="btn m-2 btn-outline-success">Register</a>
     
         <a href="user-login" class="btn m-2 btn-outline-danger">Login</a>
+      </c:if>
+       <c:if test="${not empty isLoginSuccess }">
+        <a href="#" class="btn m-2 btn-outline-success"><i class="fa-thin fa-user"> ${isLoginSuccess.name }</i> </a>
+    
+        <a href="user-logout" class="btn m-2 btn-outline-danger">Logout</a>
+      </c:if>
     </div>
+    
   </div>
 </nav>

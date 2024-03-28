@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/resources/component/jstl.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Your Spring Note</title>
 <%@ include file="/WEB-INF/resources/component/links_file.jsp"%>
-	<%@ include file="/WEB-INF/resources/component/jstl.jsp" %>
 </head>
 <body style="background-color:#f5f1f5">
 	<%@ include file="/WEB-INF/resources/component/nav.jsp"%>
@@ -15,10 +15,14 @@
 			<div class="col-md-6 offset-md-3">
 				<div class="card bg-success text-white rounded">
 					<div class="card-header text-center fs-3">Create an account</div>
-					<b class="fs-bol text-center p-1 bg-warning">Registration
-						successful.</b>
+					<c:if test="${not empty msg }">
+						<div class="bg-warning text-center rounded text-center p-1">
+							<h5>${msg }</h5>
+						</div>
+						<c:remove var="msg"/>
+					</c:if>
 					<div class="card-body">
-						<form>
+						<form action="registration-process" method="post">
 							<div class="mb-3">
 								<label for="name" class="form-label">Your Full Name</label> <input
 									type="text" class="form-control" id="name" name="name"

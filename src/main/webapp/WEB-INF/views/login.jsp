@@ -15,10 +15,20 @@
 			<div class="col-md-6 offset-md-3">
 				<div class="card bg-success text-white rounded">
 					<div class="card-header text-center fs-3">Login</div>
-					<b class="fs-bol text-center p-1 bg-warning">Login Failed</b>
+					<c:if test="${not empty msg }">
+						<div class="bg-warning text-center rounded text-center p-1">
+							<h5>${msg }</h5>
+						</div>
+						<c:remove var="msg"/>
+					</c:if>
+					<c:if test="${not empty lgn }">
+						<div class="bg-danger text-center rounded text-center p-1">
+							<h5>${lgn }</h5>
+						</div>
+						<c:remove var="lgn"/>
+					</c:if>
 					<div class="card-body">
-						<form>
-
+						<form action="login-process" method="post">
 							<div class="mb-3">
 								<label for="email" class="form-label">Email address</label> <input
 									type="email" class="form-control" id="email" name="email"
