@@ -28,7 +28,15 @@ public class Notes {
 	
 	private String createdTime;
 	
-	
+	private String updatedTime;
+
+	public String getUpdatedTime() {
+		return updatedTime;
+	}
+
+	public void setUpdatedTime(String updatedTime) {
+		this.updatedTime = updatedTime;
+	}
 
 	public String getCreatedTime() {
 		return createdTime;

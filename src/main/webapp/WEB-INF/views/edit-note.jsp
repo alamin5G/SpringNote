@@ -26,7 +26,8 @@
 									<c:remove var="note"/>
 								</c:if>
 							<div class="card-body">
-								<form method="post" action="${pageContext.request.contextPath }/">
+								<form method="post" action="${pageContext.request.contextPath }/user/noteUpdated">
+									<input type="hidden" name="id" value="${notes.id }">
 									<div class="mb-3">
 										<label for="name" class="form-label">Note Title</label> <input
 											type="text" class="form-control" id="name" name="title" value="${notes.title }"
@@ -34,8 +35,8 @@
 									</div>
 									<div class="mb-3">
 										<label for="details" class="form-label">Write Note Details</label> 
-										<textarea rows="6" cols="" class="form-control" id="details" name="details" value="${notes.details }"
-											placeholder="I will run for 2KM within 10 minutues and then start...."> </textarea>
+										<textarea rows="6" cols="" class="form-control" id="details" name="details"
+											placeholder="I will run for 2KM within 10 minutues and then start....">${notes.details } </textarea>
 									</div>
 									<button type="submit"
 										class="btn btn-outline-warning btn-success mb-2 d-grid gap-2 col-6 mx-auto">Update Note</button>

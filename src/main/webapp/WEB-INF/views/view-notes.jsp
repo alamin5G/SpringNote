@@ -16,10 +16,10 @@
             background-repeat: repeat-y;
             background-size: 100% 100%">
 		
-		<div class="text-center">
+		<div class="text-center text-white">
 			<h2>View Your Notes</h2>
 			<c:if test="${not empty msg }" >
-				<h4 class="text-danger">${msg }</h4>
+				<h4 class="text-white">${msg }</h4>
 			<c:remove var="msg"/>
 			</c:if>
 		</div>
@@ -38,14 +38,13 @@
 									<div class="card-body">
 										
 										<p>${nt.details }</p>
-										<p>${nt.createdTime }</p>
+										<p>${nt.updatedTime }</p>
 				
 										<div class="text-center">
-											<a href="${pageContext.request.contextPath }/user/editNote/${nt.id}" class="btn btn-primary btn-sm">Edit</a> 
+											<a href="${pageContext.request.contextPath }/user/editNote/?id=${nt.id}" class="btn btn-primary btn-sm">Edit</a> 
 											<a href="${pageContext.request.contextPath }/user/deleteNote?id=${nt.id}" class="btn btn-danger btn-sm">Delete</a>
 										</div>
 									</div>
-								
 							</div>
 						</div>
 					</div>

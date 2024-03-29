@@ -1,17 +1,14 @@
 package com.goonok.controller;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +21,8 @@ import com.goonok.entity.User;
 @RequestMapping("/user/")
 public class UserController {
 
+	private String createdTime;
+	
 	@Autowired
 	private NotesDao notesDao;
 
@@ -38,7 +37,11 @@ public class UserController {
 		
 		User user = (User) session.getAttribute("isLoginSuccess");
 		note.setUser(user);
-		note.setCreatedTime(LocalDateTime.now().toString());
+		
+		createdTime = LocalDateTime.now().toString();
+		note.setCreatedTime(createdTime);
+		note.setUpdatedTime(createdTime);
+		
 		int i = notesDao.saveNote(note);
 		
 		if(i>0) {
@@ -48,7 +51,6 @@ public class UserController {
 			session.setAttribute("note" , "Something went wrong!!");
 			return "redirect:/user/addNote";
 		}
-		
 	}
 	
 	
@@ -60,10 +62,25 @@ public class UserController {
 		return "view-notes";
 	}
 	
-	@RequestMapping(path = "editNote,{id}")
-	public String editNote(@PathVariable int id, Model model, HttpSession session) {
-		
+	@RequestMapping(path = "editNote")
+	public String editNote(@RequestParam("id") int id, Model model, HttpSession session) {
+		Notes note = notesDao.getNoteById(id);
+		model.addAttribute("notes", note);
 		return "edit-note";
+	}
+	
+	@RequestMapping( path = "noteUpdated", method = RequestMethod.POST)
+	public String updateNote(@ModelAttribute Notes note, HttpSession session) {
+		
+		User user = (User) session.getAttribute("isLoginSuccess");
+		note.setUser(user);
+		note.setCreatedTime(createdTime);
+		note.setUpdatedTime(LocalDateTime.now().toString());
+		notesDao.updateNotes(note);
+		
+		session.setAttribute("msg", "Note updated successfully!");
+		
+		return "redirect:/user/viewNotes";		
 	}
 	
 	@RequestMapping(path = "deleteNote")

@@ -50,6 +50,7 @@ public class NotesDaoImpl implements NotesDao{
 		return list;
 	}
 
+	@Transactional
 	@Override
 	public void updateNotes(Notes note) {
 		 hibernateTemplate.update(note);
