@@ -2,6 +2,7 @@ package com.goonok.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,8 +33,9 @@ public class AuthInterceptorHandler implements HandlerInterceptor{
 		if(user != null) {
 			return true;
 		}else {
-			response.getWriter().write("<h5>Invalid Access Request..</h5>");
-			response.sendRedirect("usre-login");
+			response.getWriter().println("invalid request ");;
+			String path = request.getContextPath();
+			response.sendRedirect(path +"/user-login");
 			return false;
 		}
 		

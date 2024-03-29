@@ -47,6 +47,7 @@ xmlns="http://www.springframework.org/schema/beans"
 		<property name="annotatedClasses">
 			<list>
 				<value>com.goonok.entity.User</value>
+				<value>com.goonok.entity.Notes</value>
 			</list>
 		</property>
 	</bean>
