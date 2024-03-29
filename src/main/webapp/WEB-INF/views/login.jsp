@@ -12,7 +12,7 @@
 	<%@ include file="/WEB-INF/resources/component/nav.jsp"%>
 	 <div class="container-fluid m-0 p-0">
  		<div class="bg-image" 
-     		style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+     		style="background-image: url('<c:url value="/resources/img/notepad1.jpg" />');
             height: 100vh">
 		
 		 	<!-- login form start -->

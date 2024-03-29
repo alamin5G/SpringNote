@@ -11,7 +11,11 @@
 <body>
 <%@ include file="/WEB-INF/resources/component/nav.jsp" %>
  <div class="container-fluid m-0 p-0">
- 	<img alt="note-background" src="<c:url value="/resources/img/notepad.jpg" />" width="100%" height="850px">
+ 	<div class="bg-image" 
+ 			style="background-image: url('<c:url value="/resources/img/notepad.jpg" />');
+ 			height: 100vh">
+ 		
+ 	</div>
  </div>
 
 </body>
