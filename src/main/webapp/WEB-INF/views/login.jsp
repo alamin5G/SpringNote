@@ -10,55 +10,59 @@
 </head>
 <body style="background-color:#f5f1f5">
 	<%@ include file="/WEB-INF/resources/component/nav.jsp"%>
-	<div class="container mt-3">
-		<div class="row">
-			<div class="col-md-6 offset-md-3">
-				<div class="card bg-success text-white rounded">
-					<div class="card-header text-center fs-3">Login</div>
-					<c:if test="${not empty msg }">
-						<div class="bg-warning text-center rounded text-center p-1">
-							<h5>${msg }</h5>
-						</div>
-						<c:remove var="msg"/>
-					</c:if>
-					<c:if test="${not empty lgn }">
-						<div class="bg-danger text-center rounded text-center p-1">
-							<h5>${lgn }</h5>
-						</div>
-						<c:remove var="lgn"/>
-					</c:if>
-					<div class="card-body">
-						<form action="login-process" method="post">
-							<div class="mb-3">
-								<label for="email" class="form-label">Email address</label> <input
-									type="email" class="form-control" id="email" name="email"
-									placeholder="Enter your email address">
+	 <div class="container-fluid m-0 p-0">
+ 		<div class="bg-image" 
+     		style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            height: 100vh">
+		
+		 	<!-- login form start -->
+			<div class="container pt-5">
+				<div class="row">
+					<div class="col-md-6 offset-md-3">
+						<div class="card bg-success text-white rounded">
+							<div class="card-header text-center fs-3">Login</div>
+							<c:if test="${not empty msg }">
+								<div class="bg-warning text-center rounded text-center p-1">
+									<h5>${msg }</h5>
+								</div>
+								<c:remove var="msg"/>
+							</c:if>
+							<c:if test="${not empty lgn }">
+								<div class="bg-danger text-center rounded text-center p-1">
+									<h5>${lgn }</h5>
+								</div>
+								<c:remove var="lgn"/>
+							</c:if>
+							<div class="card-body">
+								<form action="login-process" method="post">
+									<div class="mb-3">
+										<label for="email" class="form-label">Email address</label> <input
+											type="email" class="form-control" id="email" name="email"
+											placeholder="Enter your email address">
+									</div>
+									<div class="mb-3">
+										<label for="password" class="form-label">Password</label> <input
+											type="password" class="form-control" id="password" name="password"
+											placeholder="Enter password">
+									</div>
+		
+									<div class="mb-3 form-check">
+										<input type="checkbox" class="form-check-input" name="checkbox"
+											id="exampleCheck1"> <label class="form-check-label"
+											for="exampleCheck1">Agreed on Terms and Condition.</label>
+									</div>
+									<button type="submit"
+										class="btn btn-outline-warning btn-success mb-2 text-center d-grid gap-2 col-6 mx-auto">Login</button>
+								</form>
+								<div class="card-footer text-center text-white">
+										Don't you have an account? Go to <a href="user-registration" class="btn btn-outline-danger text-white text-decoration-none p-1 m-1 rounded" >Register Page</a>
+								</div>
 							</div>
-							<div class="mb-3">
-								<label for="password" class="form-label">Password</label> <input
-									type="password" class="form-control" id="password" name="password"
-									placeholder="Enter password">
-							</div>
-
-
-							<div class="mb-3 form-check">
-								<input type="checkbox" class="form-check-input" name="checkbox"
-									id="exampleCheck1"> <label class="form-check-label"
-									for="exampleCheck1">Agreed on Terms and Condition.</label>
-							</div>
-							<button type="submit"
-								class="btn btn-outline-warning btn-success mb-2 text-center d-grid gap-2 col-6 mx-auto">Login</button>
-						</form>
-						<div class="card-footer text-center text-white">
-							
-								Don't you have an account? Go to <a href="user-registration" class="text-decoration-none text-white bg-warning p-1 m-1 rounded" >Register Page</a>
-								
-							
-
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- login form end -->
 		</div>
 	</div>
 

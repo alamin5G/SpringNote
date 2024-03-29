@@ -18,7 +18,7 @@ public class AppController {
 	@Autowired
 	UserDao userDao;
 
-	@RequestMapping("/hompage")
+	@RequestMapping("/homepage")
 	public String homepage() {
 		
 		return "home";
@@ -36,13 +36,11 @@ public class AppController {
 		User user = userDao.loginUser(eml, pass);
 		if(user != null) {
 			session.setAttribute("isLoginSuccess", user);
-			return "redirect:/viewNotes";
+			return "redirect:/homepage";
 		}else {
 			session.setAttribute("lgn", "Login Failed! Email or Password is wrong!");
 			return "redirect:/user-login";
 		}
-		
-		
 	}
 	
 	
@@ -65,28 +63,21 @@ public class AppController {
 		}
 		
 	}
-	
-	@RequestMapping("/addNote")
-	public String addNote() {
-		
-		return "add-note";
-	}
-	
-	@RequestMapping("/viewNotes")
-	public String viewNotes() {
-		
-		return "view-notes";
-	}
-	
-	@RequestMapping("editNote")
-	public String editNote() {
-		
-		return "edit-note";
-	}
-	
-	@RequestMapping("deleteNote")
-	public String deleteNote() {
-		
-		return "redirect:/viewNotes";
-	}
+	/*
+	 * @RequestMapping("/addNote") public String addNote() {
+	 * 
+	 * return "add-note"; }
+	 * 
+	 * @RequestMapping("/viewNotes") public String viewNotes() {
+	 * 
+	 * return "view-notes"; }
+	 * 
+	 * @RequestMapping("editNote") public String editNote() {
+	 * 
+	 * return "edit-note"; }
+	 * 
+	 * @RequestMapping("deleteNote") public String deleteNote() {
+	 * 
+	 * return "redirect:/viewNotes"; }
+	 */
 }

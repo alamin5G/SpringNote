@@ -47,6 +47,7 @@ xmlns="http://www.springframework.org/schema/beans"
 		<property name="annotatedClasses">
 			<list>
 				<value>com.goonok.entity.User</value>
+				<value>com.goonok.entity.Notes</value>
 			</list>
 		</property>
 	</bean>
@@ -60,8 +61,13 @@ xmlns="http://www.springframework.org/schema/beans"
 	</bean>
 	
 	<bean name="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
-	
 	</bean>
 	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/user/*"/>
+			<bean class="com.goonok.interceptor.AuthInterceptorHandler"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 </beans>

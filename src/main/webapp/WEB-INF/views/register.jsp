@@ -10,6 +10,9 @@
 </head>
 <body style="background-color:#f5f1f5">
 	<%@ include file="/WEB-INF/resources/component/nav.jsp"%>
+	<div class="container-fluid m-0 p-0">
+ 		<img alt="note-background" src="<c:url value="/resources/img/notepad.jpg" />" width="100%" height="850px">
+ 	</div>
 	<div class="container mt-3">
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
@@ -55,7 +58,7 @@
 								class="btn btn-outline-warning btn-success mb-2 d-grid gap-2 col-6 mx-auto">Registration</button>
 						</form>
 						<div class="card-footer text-center text-white">
-							Do you have an account? Go to <a href="user-login" class="text-decoration-none text-white bg-danger rounded p-1 m-1" >Login Page</a> 
+							Do you have an account? Go to <a href="user-login" class="btn text-decoration-none btn-outline-warning rounded p-1 m-1" >Login Page</a> 
 							
 						</div>
 					</div>

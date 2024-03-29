@@ -10,6 +10,9 @@
 </head>
 <body style="background-color:#f5f1f5">
 	<%@ include file="/WEB-INF/resources/component/nav.jsp"%>
+	<div class="container-fluid m-0 p-0">
+ 		<img alt="note-background" src="<c:url value="/resources/img/notepad.jpg" />" width="100%" height="850px">
+ 	</div>
 	<div class="container mt-3">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
