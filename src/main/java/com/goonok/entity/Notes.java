@@ -25,6 +25,27 @@ public class Notes {
 	@ManyToOne
 	User user;
 
+	
+	private String createdTime;
+	
+	private String updatedTime;
+
+	public String getUpdatedTime() {
+		return updatedTime;
+	}
+
+	public void setUpdatedTime(String updatedTime) {
+		this.updatedTime = updatedTime;
+	}
+
+	public String getCreatedTime() {
+		return createdTime;
+	}
+
+	public void setCreatedTime(String createdTime) {
+		this.createdTime = createdTime;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -47,6 +68,14 @@ public class Notes {
 
 	public void setDetails(String details) {
 		this.details = details;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }

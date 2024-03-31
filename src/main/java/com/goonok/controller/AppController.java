@@ -36,13 +36,12 @@ public class AppController {
 		User user = userDao.loginUser(eml, pass);
 		if(user != null) {
 			session.setAttribute("isLoginSuccess", user);
-			return "redirect:/homepage";
+			return "redirect:/user/viewNotes";
 		}else {
 			session.setAttribute("lgn", "Login Failed! Email or Password is wrong!");
 			return "redirect:/user-login";
 		}
 	}
-	
 	
 	@RequestMapping("user-registration")
 	public String registerPage() {
